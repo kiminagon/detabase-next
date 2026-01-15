@@ -20,7 +20,7 @@ export default function WhaleCard({ whale }) {
           {/* 潜水能力バー */}
           <div>
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-gray-600">🌊 潜水深度</span>
+              <span className="text-gray-600"> 潜水深度</span>
               <span className="font-bold">{whale.max_depth}m</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -33,7 +33,7 @@ export default function WhaleCard({ whale }) {
   
           {/* 耐寒性能 */}
           <div className="flex justify-between text-sm items-center">
-            <span className="text-gray-600">🌡️ 耐寒性能</span>
+            <span className="text-gray-600"> 耐寒性能</span>
             <span className={`font-bold px-2 py-0.5 rounded ${whale.min_temp <= 0 ? 'bg-cyan-100 text-cyan-800' : 'bg-orange-100 text-orange-800'}`}>
               {whale.min_temp}℃ まで適応
             </span>

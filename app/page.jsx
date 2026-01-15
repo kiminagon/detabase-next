@@ -12,7 +12,6 @@ export default function Home() {
   const [selectedAreaId, setSelectedAreaId] = useState("");
   const [results, setResults] = useState([]);
   const [currentArea, setCurrentArea] = useState(null);
-  const [executedQuery, setExecutedQuery] = useState("");
 
   // 1. アプリ起動時にSQLデータベースを作成
   useEffect(() => {
@@ -79,8 +78,6 @@ AND min_temp <= ${area.temp}
 AND diet = '${area.food}'
 ORDER BY max_depth DESC;`;
 
-    setExecutedQuery(queryStr);
-
     const res = db.exec(queryStr);
     
     if (res.length > 0) {
@@ -134,13 +131,6 @@ ORDER BY max_depth DESC;`;
           >
             生息条件を照合 (SQL実行)
           </button>
-
-          {/* SQLログ表示エリア（シンプル版） */}
-          {executedQuery && (
-            <div className="mt-6 bg-gray-900 text-green-400 p-4 rounded font-mono text-xs overflow-x-auto">
-              <pre>{executedQuery}</pre>
-            </div>
-          )}
         </div>
 
         {/* 結果表示エリア */}
