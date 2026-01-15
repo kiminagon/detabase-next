@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* もしTailwindが効かなくても最低限見えるように */
+body {
+  font-family: sans-serif;
+  color: #333;
+}
