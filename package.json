@@ -2,11 +2,14 @@
   "name": "detabase-next",
   "version": "0.1.0",
   "private": true,
-"scripts": {
-    "dev": "next dev --webpack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+  "scripts": {
+  "dev": "next dev --webpack",
+  "build": "next build --webpack",
+  "start": "next start",
+  "lint": "next lint"
+  },
+  "engines": {
+  "node": "18.x"
   },
   "dependencies": {
     "next": "16.1.2",

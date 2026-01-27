@@ -13,7 +13,6 @@ export default function Home() {
   const [results, setResults] = useState([]);
   const [currentArea, setCurrentArea] = useState(null);
 
-  // 1. アプリ起動時にSQLデータベースを作成
   useEffect(() => {
     const loadDB = async () => {
       const SQL = await initSqlJs({
@@ -21,7 +20,7 @@ export default function Home() {
       });
       const database = new SQL.Database();
 
-      // --- SQL: テーブル作成とデータ投入 ---
+
       database.run(`
         DROP TABLE IF EXISTS sea_areas;
         DROP TABLE IF EXISTS whales;
@@ -50,7 +49,7 @@ export default function Home() {
         INSERT INTO whales VALUES (11, 'コビレゴンドウ', 'Globicephala macrorhynchus', 'マイルカ科', 1000, 10, 'イカ');
         INSERT INTO whales VALUES (12, 'ハナゴンドウ', 'Grampus griseus', 'マイルカ科', 600, 10, 'イカ');
       `);
-      // -------------------------------------
+
 
       setDb(database);
 
@@ -65,7 +64,6 @@ export default function Home() {
     loadDB();
   }, []);
 
-  // 2. 検索処理
   const handleSearch = () => {
     if (!db || !selectedAreaId) return;
 
